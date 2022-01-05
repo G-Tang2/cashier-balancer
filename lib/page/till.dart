@@ -1,5 +1,6 @@
 import 'package:app/main.dart';
 import 'package:app/provider/till_provider.dart';
+import 'package:app/widget/message_box.dart';
 import 'package:app/widget/till_horizontal_spinbox.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
@@ -21,7 +22,9 @@ class _TillPageState extends State<TillPage> {
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(title: const Text('Till')),
       body: Column(children: [
-        const Text('Enter the number coins and notes for each denomination.'),
+        const MessageBox(Text(
+            'Enter the number coins and notes for each denomination.',
+            style: TextStyle(color: Colors.black))),
         Expanded(
             child: Scrollbar(
                 child: ListView(children: const [

@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         title: 'Cash Counting',
         darkTheme: ThemeData(
             brightness: Brightness.dark,
-            primarySwatch: Colors.blue,
+            primarySwatch: Colors.green,
             elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(

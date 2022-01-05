@@ -1,6 +1,7 @@
 import 'package:app/provider/float_provider.dart';
 import 'package:app/provider/taking_provider.dart';
 import 'package:app/provider/till_provider.dart';
+import 'package:app/widget/message_box.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 import 'package:collection/collection.dart';
@@ -27,7 +28,9 @@ class _TakingsPageState extends State<TakingsPage> {
           appBar: AppBar(title: const Text('Bank Takings')),
           body: Scrollbar(
               child: ListView(children: [
-            const Text('Confirm you have these amounts for the bank takings.'),
+            const MessageBox(Text(
+                'Confirm you have these amounts for the bank takings.',
+                style: const TextStyle(color: Colors.black))),
             makeTable(),
             Text(
                 'Total: \$${context.read<TakingModel>().getTotal.toStringAsFixed(2)}'),

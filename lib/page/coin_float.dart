@@ -3,6 +3,7 @@ import 'package:app/provider/float_provider.dart';
 import 'package:app/provider/safe_provider.dart';
 import 'package:app/provider/taking_provider.dart';
 import 'package:app/provider/till_provider.dart';
+import 'package:app/widget/message_box.dart';
 import 'package:app/widget/taking_horizontal_spinbox.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
@@ -25,9 +26,19 @@ class _CoinFloatPageState extends State<CoinFloatPage> {
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(title: const Text('Coin Float')),
       body: Column(children: [
-        Text(
-            'Remove \$${excessCoins().toStringAsFixed(2)} in coins from the till and add it to the bank takings, the remaining coins will be for the float.'),
-        const Text('\nEnter the amount removed below.\n'),
+        MessageBox(Column(
+          children: [
+            Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                    'Remove \$${excessCoins().toStringAsFixed(2)} in coins from the till and add it to the bank takings, the remaining coins will be for the float.',
+                    style: const TextStyle(color: Colors.black))),
+            const Align(
+                alignment: Alignment.centerLeft,
+                child: Text('\nEnter the amount removed below.',
+                    style: TextStyle(color: Colors.black)))
+          ],
+        )),
         Expanded(
             child: Scrollbar(
                 child: ListView(children: const [

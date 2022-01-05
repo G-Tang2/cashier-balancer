@@ -1,4 +1,5 @@
 import 'package:app/provider/safe_provider.dart';
+import 'package:app/widget/message_box.dart';
 import 'package:app/widget/safe_horizontal_spinbox.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
@@ -20,10 +21,13 @@ class _SafePageState extends State<SafePage> {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(title: const Text('Safe')),
         body: Column(children: [
-          const Text('Enter the number of rolls for each coin denomination.'),
           Expanded(
               child: Scrollbar(
                   child: ListView(children: const [
+            MessageBox(Text(
+              'Enter the number of rolls for each coin denomination.',
+              style: TextStyle(color: Colors.black),
+            )),
             SafeHorizontalSpinBox(0, '\$0.05'),
             SafeHorizontalSpinBox(1, '\$0.10'),
             SafeHorizontalSpinBox(2, '\$0.20'),

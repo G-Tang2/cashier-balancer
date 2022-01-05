@@ -4,6 +4,7 @@ import 'package:app/provider/safe_provider.dart';
 import 'package:app/provider/taking_provider.dart';
 import 'package:app/provider/till_provider.dart';
 import 'package:app/widget/float_horizontal_spinbox.dart';
+import 'package:app/widget/message_box.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 import 'package:collection/collection.dart';
@@ -49,8 +50,9 @@ class _NotenFloatPageState extends State<NoteFloatPage> {
         (context.read<FloatModel>().getTotalFloat -
                 context.read<FloatModel>().getTotalCoins)
             .toStringAsFixed(2));
-    return Text(
-        'Remove \$${remainingFloatAmount.toStringAsFixed(2)} in notes from the till and add it to the float, the remaining will be for the bank takings.\n\nEnter the amount removed below.');
+    return MessageBox(Text(
+        'Remove \$${remainingFloatAmount.toStringAsFixed(2)} in notes from the till and add it to the float, the remaining will be for the bank takings.\n\nEnter the amount removed below.',
+        style: const TextStyle(color: Colors.black)));
   }
 
   Widget makeButton() {
