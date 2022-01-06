@@ -16,6 +16,7 @@ class SafeHorizontalSpinBox extends StatelessWidget {
         value: context.watch<SafeModel>().get(i),
         decoration: InputDecoration(labelText: label),
         onChanged: (value) => {updateValue(context, value)},
+        keyboardType: TextInputType.number,
       ),
       padding: const EdgeInsets.all(16),
     );

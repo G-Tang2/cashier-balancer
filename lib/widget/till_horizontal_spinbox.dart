@@ -21,6 +21,7 @@ class TillHorizontalSpinBox extends StatelessWidget {
             : context.watch<TillModel>().getNoteCount(i),
         decoration: InputDecoration(labelText: label),
         onChanged: (value) => {updateValue(context, value)},
+        keyboardType: TextInputType.number,
       ),
       padding: const EdgeInsets.all(16),
     );

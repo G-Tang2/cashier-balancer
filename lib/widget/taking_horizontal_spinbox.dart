@@ -21,6 +21,7 @@ class TakingHorizontalSpinBox extends StatelessWidget {
             : context.watch<TakingModel>().getNoteCount(i),
         decoration: InputDecoration(labelText: label),
         onChanged: (value) => {updateValue(context, value)},
+        keyboardType: TextInputType.number,
       ),
       padding: const EdgeInsets.all(16),
     );

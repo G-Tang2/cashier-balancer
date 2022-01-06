@@ -21,6 +21,7 @@ class FloatHorizontalSpinBox extends StatelessWidget {
             : context.watch<FloatModel>().getNoteCount(i),
         decoration: InputDecoration(labelText: label),
         onChanged: (value) => {updateValue(context, value)},
+        keyboardType: TextInputType.number,
       ),
       padding: const EdgeInsets.all(16),
     );
