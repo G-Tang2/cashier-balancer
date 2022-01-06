@@ -26,28 +26,28 @@ class _CoinFloatPageState extends State<CoinFloatPage> {
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(title: const Text('Coin Float')),
       body: Column(children: [
-        MessageBox(Column(
-          children: [
-            Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                    'Remove \$${excessCoins().toStringAsFixed(2)} in coins from the till and add it to the bank takings, the remaining coins will be for the float.',
-                    style: const TextStyle(color: Colors.black))),
-            const Align(
-                alignment: Alignment.centerLeft,
-                child: Text('\nEnter the amount removed below.',
-                    style: TextStyle(color: Colors.black)))
-          ],
-        )),
         Expanded(
             child: Scrollbar(
-                child: ListView(children: const [
-          TakingHorizontalSpinBox(0, '\$0.05', CashType.coin),
-          TakingHorizontalSpinBox(1, '\$0.10', CashType.coin),
-          TakingHorizontalSpinBox(2, '\$0.20', CashType.coin),
-          TakingHorizontalSpinBox(3, '\$0.50', CashType.coin),
-          TakingHorizontalSpinBox(4, '\$1.00', CashType.coin),
-          TakingHorizontalSpinBox(5, '\$2.00', CashType.coin),
+                child: ListView(children: [
+          MessageBox(Column(
+            children: [
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                      'Remove \$${excessCoins().toStringAsFixed(2)} in coins from the till and add it to the bank takings, the remaining coins will be for the float.',
+                      style: const TextStyle(color: Colors.black))),
+              const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('\nEnter the amount removed below.',
+                      style: TextStyle(color: Colors.black)))
+            ],
+          )),
+          const TakingHorizontalSpinBox(0, '\$0.05', CashType.coin),
+          const TakingHorizontalSpinBox(1, '\$0.10', CashType.coin),
+          const TakingHorizontalSpinBox(2, '\$0.20', CashType.coin),
+          const TakingHorizontalSpinBox(3, '\$0.50', CashType.coin),
+          const TakingHorizontalSpinBox(4, '\$1.00', CashType.coin),
+          const TakingHorizontalSpinBox(5, '\$2.00', CashType.coin),
         ]))),
         Text(
             'Total: \$${context.watch<TakingModel>().getTotalCoins.toStringAsFixed(2)}'),

@@ -22,12 +22,12 @@ class _TillPageState extends State<TillPage> {
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(title: const Text('Till')),
       body: Column(children: [
-        const MessageBox(Text(
-            'Enter the number coins and notes for each denomination.',
-            style: TextStyle(color: Colors.black))),
         Expanded(
             child: Scrollbar(
                 child: ListView(children: const [
+          MessageBox(Text(
+              'Enter the number coins and notes for each denomination.',
+              style: TextStyle(color: Colors.black))),
           TillHorizontalSpinBox(0, '\$0.05', CashType.coin),
           TillHorizontalSpinBox(1, '\$0.10', CashType.coin),
           TillHorizontalSpinBox(2, '\$0.20', CashType.coin),
