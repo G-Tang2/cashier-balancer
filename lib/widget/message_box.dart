@@ -8,10 +8,13 @@ class MessageBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: const Color.fromRGBO(220, 220, 220, 0.7),
+    return Container(
       child: Container(child: content, padding: const EdgeInsets.all(20)),
       margin: const EdgeInsets.all(15),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+        color: Color.fromRGBO(220, 220, 220, 0.7),
+      ),
     );
   }
 }

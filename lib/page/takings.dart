@@ -30,7 +30,7 @@ class _TakingsPageState extends State<TakingsPage> {
               child: ListView(children: [
             const MessageBox(Text(
                 'Confirm you have these amounts for the bank takings.',
-                style: const TextStyle(color: Colors.black))),
+                style: TextStyle(color: Colors.black))),
             makeTable(),
             Text(
                 'Total: \$${context.read<TakingModel>().getTotal.toStringAsFixed(2)}'),

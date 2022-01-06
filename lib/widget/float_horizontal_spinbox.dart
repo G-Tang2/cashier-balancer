@@ -14,7 +14,7 @@ class FloatHorizontalSpinBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       child: SpinBox(
         value: type == CashType.coin
             ? context.watch<FloatModel>().getCoinCount(i)
@@ -24,6 +24,10 @@ class FloatHorizontalSpinBox extends StatelessWidget {
         keyboardType: TextInputType.number,
       ),
       padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.fromLTRB(15, 4, 15, 4),
+      decoration: const BoxDecoration(
+          color: Color.fromARGB(240, 90, 90, 90),
+          borderRadius: BorderRadius.all(Radius.circular(15))),
     );
   }
 
