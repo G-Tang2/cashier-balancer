@@ -1,5 +1,6 @@
 import 'package:app/provider/safe_provider.dart';
 import 'package:app/widget/message_box.dart';
+import 'package:app/widget/bottom_navigation.dart';
 import 'package:app/widget/safe_horizontal_spinbox.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
@@ -35,13 +36,9 @@ class _SafePageState extends State<SafePage> {
             SafeHorizontalSpinBox(4, '\$1.00'),
             SafeHorizontalSpinBox(5, '\$2.00')
           ]))),
-          Text(
-              'Total: \$${context.watch<SafeModel>().getTotal.toStringAsFixed(2)}'),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/till');
-              },
-              child: const Text('Next'))
+          BottomNavigation(
+              'Total: \$${context.watch<SafeModel>().getTotal.toStringAsFixed(2)}',
+              '/till'),
         ]),
       );
 

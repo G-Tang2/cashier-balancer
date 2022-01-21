@@ -1,5 +1,6 @@
 import 'package:app/main.dart';
 import 'package:app/provider/till_provider.dart';
+import 'package:app/widget/bottom_navigation.dart';
 import 'package:app/widget/message_box.dart';
 import 'package:app/widget/till_horizontal_spinbox.dart';
 import 'package:flutter/material.dart';
@@ -40,12 +41,8 @@ class _TillPageState extends State<TillPage> {
           TillHorizontalSpinBox(3, '\$50.00', CashType.note),
           TillHorizontalSpinBox(4, '\$100.00', CashType.note)
         ]))),
-        Text(
-            'Total: \$${context.watch<TillModel>().getTotal.toStringAsFixed(2)}'),
-        ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/coin_float');
-            },
-            child: const Text('Next'))
+        BottomNavigation(
+            'Total: \$${context.watch<TillModel>().getTotal.toStringAsFixed(2)}',
+            '/coin_float')
       ]));
 }

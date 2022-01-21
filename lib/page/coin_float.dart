@@ -49,9 +49,15 @@ class _CoinFloatPageState extends State<CoinFloatPage> {
           const TakingHorizontalSpinBox(4, '\$1.00', CashType.coin),
           const TakingHorizontalSpinBox(5, '\$2.00', CashType.coin),
         ]))),
-        Text(
-            'Total: \$${context.watch<TakingModel>().getTotalCoins.toStringAsFixed(2)}'),
-        makeButton()
+        Container(
+            color: Colors.grey[800],
+            width: double.infinity,
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+            child: Column(children: [
+              Text(
+                  'Total: \$${context.watch<TakingModel>().getTotalCoins.toStringAsFixed(2)}'),
+              makeButton()
+            ]))
       ]));
 
   Widget makeButton() {

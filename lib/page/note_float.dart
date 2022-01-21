@@ -40,9 +40,15 @@ class _NotenFloatPageState extends State<NoteFloatPage> {
               const FloatHorizontalSpinBox(3, '\$50.00', CashType.note),
               const FloatHorizontalSpinBox(4, '\$100.00', CashType.note),
             ]))),
-            Text(
-                'Total: \$${context.watch<FloatModel>().getTotalNotes.toStringAsFixed(2)}'),
-            makeButton()
+            Container(
+                color: Colors.grey[800],
+                width: double.infinity,
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                child: Column(children: [
+                  Text(
+                      'Total: \$${context.watch<FloatModel>().getTotalNotes.toStringAsFixed(2)}'),
+                  makeButton()
+                ]))
           ])));
 
   Widget makeInstructionText() {
