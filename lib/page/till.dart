@@ -2,6 +2,7 @@ import 'package:app/main.dart';
 import 'package:app/provider/till_provider.dart';
 import 'package:app/widget/bottom_navigation.dart';
 import 'package:app/widget/message_box.dart';
+import 'package:app/widget/next_button.dart';
 import 'package:app/widget/till_horizontal_spinbox.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
@@ -43,14 +44,6 @@ class _TillPageState extends State<TillPage> {
         ]))),
         BottomNavigation(
             '\$${context.watch<TillModel>().getTotal.toStringAsFixed(2)}',
-            makeButton())
+            const NextButton('/coin_float'))
       ]));
-
-  Widget makeButton() {
-    return ElevatedButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/coin_float');
-        },
-        child: const Text('Next'));
-  }
 }

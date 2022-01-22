@@ -1,6 +1,7 @@
 import 'package:app/provider/safe_provider.dart';
 import 'package:app/widget/message_box.dart';
 import 'package:app/widget/bottom_navigation.dart';
+import 'package:app/widget/next_button.dart';
 import 'package:app/widget/safe_horizontal_spinbox.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
@@ -38,17 +39,9 @@ class _SafePageState extends State<SafePage> {
           ]))),
           BottomNavigation(
               '\$${context.watch<SafeModel>().getTotal.toStringAsFixed(2)}',
-              makeButton()),
+              const NextButton('/till')),
         ]),
       );
-
-  Widget makeButton() {
-    return ElevatedButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/till');
-        },
-        child: const Text('Next'));
-  }
 
   // @override
   // Widget build(BuildContext context) => Scaffold(
