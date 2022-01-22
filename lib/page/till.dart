@@ -43,7 +43,7 @@ class _TillPageState extends State<TillPage> {
           TillHorizontalSpinBox(4, '\$100.00', CashType.note)
         ]))),
         BottomNavigation(
-            '\$${context.watch<TillModel>().getTotal.toStringAsFixed(2)}',
-            const NextButton('/coin_float'))
+            text: '\$${context.watch<TillModel>().getTotal.toStringAsFixed(2)}',
+            button: const NextButton('/coin_float'))
       ]));
 }

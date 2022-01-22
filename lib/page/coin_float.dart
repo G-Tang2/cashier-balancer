@@ -51,8 +51,10 @@ class _CoinFloatPageState extends State<CoinFloatPage> {
           const TakingHorizontalSpinBox(5, '\$2.00', CashType.coin),
         ]))),
         BottomNavigation(
-            '\$${context.watch<TakingModel>().getTotalCoins.toStringAsFixed(2)}',
-            makeButton())
+            text:
+                '\$${context.watch<TakingModel>().getTotalCoins.toStringAsFixed(2)}',
+            subText: "Target: \$${excessCoins().toStringAsFixed(2)}",
+            button: makeButton())
       ]));
 
   Widget makeButton() {

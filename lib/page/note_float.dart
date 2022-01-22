@@ -42,17 +42,20 @@ class _NotenFloatPageState extends State<NoteFloatPage> {
               const FloatHorizontalSpinBox(4, '\$100.00', CashType.note),
             ]))),
             BottomNavigation(
-                '\$${context.watch<FloatModel>().getTotalNotes.toStringAsFixed(2)}',
-                makeButton())
+                text:
+                    '\$${context.watch<FloatModel>().getTotalNotes.toStringAsFixed(2)}',
+                subText: "Target: ${getRemainingFloatAmount()}",
+                button: makeButton())
           ])));
 
+  String getRemainingFloatAmount() =>
+      (context.read<FloatModel>().getTotalFloat -
+              context.read<FloatModel>().getTotalCoins)
+          .toStringAsFixed(2);
+
   Widget makeInstructionText() {
-    final double remainingFloatAmount = double.parse(
-        (context.read<FloatModel>().getTotalFloat -
-                context.read<FloatModel>().getTotalCoins)
-            .toStringAsFixed(2));
     return MessageBox(Text(
-        'Remove \$${remainingFloatAmount.toStringAsFixed(2)} in notes from the till and add it to the float, the remaining will be for the bank takings.\n\nEnter the amount removed below.',
+        'Remove \$${getRemainingFloatAmount()} in notes from the till and add it to the float, the remaining will be for the bank takings.\n\nEnter the amount removed below.',
         style: const TextStyle(color: Colors.black)));
   }
 
