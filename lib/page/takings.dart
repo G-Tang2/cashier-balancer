@@ -33,7 +33,7 @@ class _TakingsPageState extends State<TakingsPage> {
                 style: TextStyle(color: Colors.black))),
             makeTable(),
             Text(
-                'Total: \$${context.read<TakingModel>().getTotal.toStringAsFixed(2)}'),
+                '\$${context.read<TakingModel>().getTotal.toStringAsFixed(2)}'),
             makeButton()
           ]))));
 

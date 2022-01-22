@@ -13,9 +13,13 @@ class BottomNavigation extends StatelessWidget {
     return Container(
         color: Colors.grey[800],
         width: double.infinity,
-        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        padding: const EdgeInsets.fromLTRB(0, 15, 0, 15),
         child: Column(children: [
-          Text(text),
+          Text(
+            text,
+            style: const TextStyle(fontSize: 32),
+          ),
+          const SizedBox(height: 10),
           ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, destination);

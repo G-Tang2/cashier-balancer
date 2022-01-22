@@ -37,7 +37,7 @@ class _SafePageState extends State<SafePage> {
             SafeHorizontalSpinBox(5, '\$2.00')
           ]))),
           BottomNavigation(
-              'Total: \$${context.watch<SafeModel>().getTotal.toStringAsFixed(2)}',
+              '\$${context.watch<SafeModel>().getTotal.toStringAsFixed(2)}',
               '/till'),
         ]),
       );

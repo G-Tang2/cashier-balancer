@@ -46,7 +46,7 @@ class _NotenFloatPageState extends State<NoteFloatPage> {
                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                 child: Column(children: [
                   Text(
-                      'Total: \$${context.watch<FloatModel>().getTotalNotes.toStringAsFixed(2)}'),
+                      '\$${context.watch<FloatModel>().getTotalNotes.toStringAsFixed(2)}'),
                   makeButton()
                 ]))
           ])));

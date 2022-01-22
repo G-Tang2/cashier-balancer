@@ -55,7 +55,7 @@ class _CoinFloatPageState extends State<CoinFloatPage> {
             padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
             child: Column(children: [
               Text(
-                  'Total: \$${context.watch<TakingModel>().getTotalCoins.toStringAsFixed(2)}'),
+                  '\$${context.watch<TakingModel>().getTotalCoins.toStringAsFixed(2)}'),
               makeButton()
             ]))
       ]));
