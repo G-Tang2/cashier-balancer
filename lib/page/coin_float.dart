@@ -3,6 +3,7 @@ import 'package:app/provider/float_provider.dart';
 import 'package:app/provider/safe_provider.dart';
 import 'package:app/provider/taking_provider.dart';
 import 'package:app/provider/till_provider.dart';
+import 'package:app/widget/bottom_navigation.dart';
 import 'package:app/widget/message_box.dart';
 import 'package:app/widget/taking_horizontal_spinbox.dart';
 import 'package:flutter/material.dart';
@@ -49,15 +50,9 @@ class _CoinFloatPageState extends State<CoinFloatPage> {
           const TakingHorizontalSpinBox(4, '\$1.00', CashType.coin),
           const TakingHorizontalSpinBox(5, '\$2.00', CashType.coin),
         ]))),
-        Container(
-            color: Colors.grey[800],
-            width: double.infinity,
-            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-            child: Column(children: [
-              Text(
-                  '\$${context.watch<TakingModel>().getTotalCoins.toStringAsFixed(2)}'),
-              makeButton()
-            ]))
+        BottomNavigation(
+            '\$${context.watch<TakingModel>().getTotalCoins.toStringAsFixed(2)}',
+            makeButton())
       ]));
 
   Widget makeButton() {

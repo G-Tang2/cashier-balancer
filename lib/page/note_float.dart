@@ -3,6 +3,7 @@ import 'package:app/provider/float_provider.dart';
 import 'package:app/provider/safe_provider.dart';
 import 'package:app/provider/taking_provider.dart';
 import 'package:app/provider/till_provider.dart';
+import 'package:app/widget/bottom_navigation.dart';
 import 'package:app/widget/float_horizontal_spinbox.dart';
 import 'package:app/widget/message_box.dart';
 import 'package:flutter/material.dart';
@@ -40,15 +41,9 @@ class _NotenFloatPageState extends State<NoteFloatPage> {
               const FloatHorizontalSpinBox(3, '\$50.00', CashType.note),
               const FloatHorizontalSpinBox(4, '\$100.00', CashType.note),
             ]))),
-            Container(
-                color: Colors.grey[800],
-                width: double.infinity,
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                child: Column(children: [
-                  Text(
-                      '\$${context.watch<FloatModel>().getTotalNotes.toStringAsFixed(2)}'),
-                  makeButton()
-                ]))
+            BottomNavigation(
+                '\$${context.watch<FloatModel>().getTotalNotes.toStringAsFixed(2)}',
+                makeButton())
           ])));
 
   Widget makeInstructionText() {

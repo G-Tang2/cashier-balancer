@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 
 class BottomNavigation extends StatelessWidget {
   final String text;
-  final String destination;
+  final Widget button;
 
-  const BottomNavigation(this.text, this.destination, {Key? key})
-      : super(key: key);
+  const BottomNavigation(this.text, this.button, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +19,7 @@ class BottomNavigation extends StatelessWidget {
             style: const TextStyle(fontSize: 32),
           ),
           const SizedBox(height: 10),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, destination);
-              },
-              child: const Text('Next'))
+          button
         ]));
   }
 }

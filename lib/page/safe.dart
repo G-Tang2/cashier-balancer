@@ -38,9 +38,17 @@ class _SafePageState extends State<SafePage> {
           ]))),
           BottomNavigation(
               '\$${context.watch<SafeModel>().getTotal.toStringAsFixed(2)}',
-              '/till'),
+              makeButton()),
         ]),
       );
+
+  Widget makeButton() {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/till');
+        },
+        child: const Text('Next'));
+  }
 
   // @override
   // Widget build(BuildContext context) => Scaffold(

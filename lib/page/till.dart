@@ -43,6 +43,14 @@ class _TillPageState extends State<TillPage> {
         ]))),
         BottomNavigation(
             '\$${context.watch<TillModel>().getTotal.toStringAsFixed(2)}',
-            '/coin_float')
+            makeButton())
       ]));
+
+  Widget makeButton() {
+    return ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/coin_float');
+        },
+        child: const Text('Next'));
+  }
 }
