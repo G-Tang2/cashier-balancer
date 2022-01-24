@@ -5,6 +5,7 @@ import 'package:app/provider/taking_provider.dart';
 import 'package:app/provider/till_provider.dart';
 import 'package:app/widget/bottom_navigation.dart';
 import 'package:app/widget/message_box.dart';
+import 'package:app/widget/next_button.dart';
 import 'package:app/widget/taking_horizontal_spinbox.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
@@ -59,14 +60,10 @@ class _CoinFloatPageState extends State<CoinFloatPage> {
 
   Widget makeButton() {
     double coinTakings = context.watch<TakingModel>().getTotalCoins;
-    return ElevatedButton(
-        onPressed: coinTakings == excessCoins()
-            ? () {
-                updateCoinFloat();
-                Navigator.pushNamed(context, '/note_float');
-              }
-            : null,
-        child: const Text('Next'));
+    return NextButton(
+        destination: '/note_float',
+        callback: updateCoinFloat,
+        condition: coinTakings == excessCoins());
   }
 
   void updateCoinFloat() {

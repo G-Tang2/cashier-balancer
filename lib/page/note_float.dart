@@ -6,6 +6,7 @@ import 'package:app/provider/till_provider.dart';
 import 'package:app/widget/bottom_navigation.dart';
 import 'package:app/widget/float_horizontal_spinbox.dart';
 import 'package:app/widget/message_box.dart';
+import 'package:app/widget/next_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 import 'package:collection/collection.dart';
@@ -65,14 +66,10 @@ class _NotenFloatPageState extends State<NoteFloatPage> {
                 context.read<FloatModel>().getTotalCoins)
             .toStringAsFixed(2));
     double floatTotalNotes = context.watch<FloatModel>().getTotalNotes;
-    return ElevatedButton(
-        onPressed: remainingFloatAmount == floatTotalNotes
-            ? () {
-                updateNoteTakings();
-                Navigator.pushNamed(context, '/takings');
-              }
-            : null,
-        child: const Text('Next'));
+    return NextButton(
+        destination: '/takings',
+        callback: updateNoteTakings,
+        condition: remainingFloatAmount == floatTotalNotes);
   }
 
   void updateNoteTakings() {

@@ -44,6 +44,6 @@ class _TillPageState extends State<TillPage> {
         ]))),
         BottomNavigation(
             text: '\$${context.watch<TillModel>().getTotal.toStringAsFixed(2)}',
-            button: const NextButton('/coin_float'))
+            button: const NextButton(destination: '/coin_float'))
       ]));
 }
