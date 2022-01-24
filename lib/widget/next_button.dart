@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class NextButton extends StatelessWidget {
   final String destination;
-  final VoidCallback? callback;
-  final bool condition;
+  final VoidCallback?
+      callback; // function that will be called when button is pressed
+  final bool condition; // condition check that enables or disables button
 
   const NextButton(
       {required this.destination,
@@ -20,6 +21,7 @@ class NextButton extends StatelessWidget {
         child: ElevatedButton(
             onPressed: condition
                 ? () {
+                    callback?.call();
                     Navigator.pushNamed(context, destination);
                   }
                 : null,

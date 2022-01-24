@@ -1,7 +1,9 @@
 import 'package:app/provider/float_provider.dart';
 import 'package:app/provider/taking_provider.dart';
 import 'package:app/provider/till_provider.dart';
+import 'package:app/widget/bottom_navigation.dart';
 import 'package:app/widget/message_box.dart';
+import 'package:app/widget/next_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 import 'package:collection/collection.dart';
@@ -26,24 +28,16 @@ class _TakingsPageState extends State<TakingsPage> {
       },
       child: Scaffold(
           appBar: AppBar(title: const Text('Bank Takings')),
-          body: Scrollbar(
-              child: ListView(children: [
+          body: Column(children: [
             const MessageBox(Text(
                 'Confirm you have these amounts for the bank takings.',
                 style: TextStyle(color: Colors.black))),
-            makeTable(),
-            Text(
-                '\$${context.read<TakingModel>().getTotal.toStringAsFixed(2)}'),
-            makeButton()
-          ]))));
-
-  Widget makeButton() {
-    return ElevatedButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/finalising');
-        },
-        child: const Text('Confirm'));
-  }
+            Expanded(child: makeTable()),
+            BottomNavigation(
+                text:
+                    '\$${context.read<TakingModel>().getTotal.toStringAsFixed(2)}',
+                button: const NextButton(destination: '/finalising'))
+          ])));
 
   Widget makeTable() {
     return Table(border: TableBorder.all(), children: <TableRow>[
