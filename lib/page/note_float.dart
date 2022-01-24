@@ -45,7 +45,7 @@ class _NotenFloatPageState extends State<NoteFloatPage> {
             BottomNavigation(
                 text:
                     '\$${context.watch<FloatModel>().getTotalNotes.toStringAsFixed(2)}',
-                subText: "Target: ${getRemainingFloatAmount()}",
+                subText: "Target: \$${getRemainingFloatAmount()}",
                 button: makeButton())
           ])));
 
