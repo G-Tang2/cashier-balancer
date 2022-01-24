@@ -25,9 +25,6 @@ class FloatHorizontalSpinBox extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(16),
       margin: const EdgeInsets.fromLTRB(15, 4, 15, 4),
-      decoration: const BoxDecoration(
-          color: Color.fromARGB(240, 90, 90, 90),
-          borderRadius: BorderRadius.all(Radius.circular(15))),
     );
   }
 
