@@ -9,7 +9,7 @@ class MessageBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Container(child: content, padding: const EdgeInsets.all(20)),
-      margin: const EdgeInsets.fromLTRB(25, 15, 25, 15),
+      margin: const EdgeInsets.fromLTRB(25, 15, 25, 0),
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(15)),
         color: Color.fromRGBO(220, 220, 220, 0.7),
