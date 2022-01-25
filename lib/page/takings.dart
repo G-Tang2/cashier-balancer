@@ -34,6 +34,7 @@ class _TakingsPageState extends State<TakingsPage> {
             const MessageBox(Text(
                 'Confirm you have these amounts for the bank takings.',
                 style: TextStyle(color: Colors.black))),
+            Container(height: 16),
             Expanded(
                 child: Container(
                     margin: const EdgeInsets.fromLTRB(25, 0, 25, 0),
