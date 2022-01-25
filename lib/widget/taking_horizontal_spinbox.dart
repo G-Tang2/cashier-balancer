@@ -14,17 +14,17 @@ class TakingHorizontalSpinBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      child: SpinBox(
-        value: type == CashType.coin
-            ? context.watch<TakingModel>().getCoinCount(i)
-            : context.watch<TakingModel>().getNoteCount(i),
-        decoration: InputDecoration(labelText: label),
-        onChanged: (value) => {updateValue(context, value)},
-        keyboardType: TextInputType.number,
-      ),
-      padding: const EdgeInsets.all(16),
-    );
+    return Container(
+        child: SpinBox(
+          value: type == CashType.coin
+              ? context.watch<TakingModel>().getCoinCount(i)
+              : context.watch<TakingModel>().getNoteCount(i),
+          decoration: InputDecoration(labelText: label),
+          onChanged: (value) => {updateValue(context, value)},
+          keyboardType: TextInputType.number,
+        ),
+        padding: const EdgeInsets.all(16),
+        margin: const EdgeInsets.fromLTRB(10, 4, 10, 4));
   }
 
   void updateValue(BuildContext context, double value) {

@@ -24,7 +24,7 @@ class FloatHorizontalSpinBox extends StatelessWidget {
         keyboardType: TextInputType.number,
       ),
       padding: const EdgeInsets.all(16),
-      margin: const EdgeInsets.fromLTRB(15, 4, 15, 4),
+      margin: const EdgeInsets.fromLTRB(10, 4, 10, 4),
     );
   }
 
