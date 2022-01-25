@@ -34,7 +34,10 @@ class _TakingsPageState extends State<TakingsPage> {
             const MessageBox(Text(
                 'Confirm you have these amounts for the bank takings.',
                 style: TextStyle(color: Colors.black))),
-            const Expanded(child: ZReadTable()),
+            Expanded(
+                child: Container(
+                    margin: const EdgeInsets.fromLTRB(25, 0, 25, 0),
+                    child: const ZReadTable())),
             BottomNavigation(
                 text:
                     '\$${context.read<TakingModel>().getTotal.toStringAsFixed(2)}',
