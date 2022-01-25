@@ -8,37 +8,32 @@ class ZReadTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-        child: Table(border: TableBorder.all(color: Colors.white), children: [
-          tableRow(
-              'Denomination',
-              'Count',
-              const TextStyle(fontWeight: FontWeight.bold),
-              Colors.grey.shade700),
-          tableRow('\$0.05',
-              context.read<TakingModel>().getCoinCount(0).toStringAsFixed(0)),
-          tableRow('\$0.10',
-              context.read<TakingModel>().getCoinCount(1).toStringAsFixed(0)),
-          tableRow('\$0.20',
-              context.read<TakingModel>().getCoinCount(2).toStringAsFixed(0)),
-          tableRow('\$0.50',
-              context.read<TakingModel>().getCoinCount(3).toStringAsFixed(0)),
-          tableRow('\$1.00',
-              context.read<TakingModel>().getCoinCount(4).toStringAsFixed(0)),
-          tableRow('\$2.00',
-              context.read<TakingModel>().getCoinCount(5).toStringAsFixed(0)),
-          tableRow('\$5.00',
-              context.read<TakingModel>().getNoteCount(0).toStringAsFixed(0)),
-          tableRow('\$10.00',
-              context.read<TakingModel>().getNoteCount(1).toStringAsFixed(0)),
-          tableRow('\$20.00',
-              context.read<TakingModel>().getNoteCount(2).toStringAsFixed(0)),
-          tableRow('\$50.00',
-              context.read<TakingModel>().getNoteCount(3).toStringAsFixed(0)),
-          tableRow('\$100.00',
-              context.read<TakingModel>().getNoteCount(4).toStringAsFixed(0)),
-        ]));
+    return Table(border: TableBorder.all(color: Colors.white), children: [
+      tableRow('Denomination', 'Count',
+          const TextStyle(fontWeight: FontWeight.bold), Colors.grey.shade700),
+      tableRow('\$0.05',
+          context.read<TakingModel>().getCoinCount(0).toStringAsFixed(0)),
+      tableRow('\$0.10',
+          context.read<TakingModel>().getCoinCount(1).toStringAsFixed(0)),
+      tableRow('\$0.20',
+          context.read<TakingModel>().getCoinCount(2).toStringAsFixed(0)),
+      tableRow('\$0.50',
+          context.read<TakingModel>().getCoinCount(3).toStringAsFixed(0)),
+      tableRow('\$1.00',
+          context.read<TakingModel>().getCoinCount(4).toStringAsFixed(0)),
+      tableRow('\$2.00',
+          context.read<TakingModel>().getCoinCount(5).toStringAsFixed(0)),
+      tableRow('\$5.00',
+          context.read<TakingModel>().getNoteCount(0).toStringAsFixed(0)),
+      tableRow('\$10.00',
+          context.read<TakingModel>().getNoteCount(1).toStringAsFixed(0)),
+      tableRow('\$20.00',
+          context.read<TakingModel>().getNoteCount(2).toStringAsFixed(0)),
+      tableRow('\$50.00',
+          context.read<TakingModel>().getNoteCount(3).toStringAsFixed(0)),
+      tableRow('\$100.00',
+          context.read<TakingModel>().getNoteCount(4).toStringAsFixed(0)),
+    ]);
   }
 
   TableRow tableRow(String text1, String text2,

@@ -36,12 +36,25 @@ class _FinalisingTerminalPageState extends State<FinalisingTerminalPage> {
           title: const Text('Print Z-Read'),
           content: Container(
               alignment: Alignment.centerLeft,
-              child: Column(children: [
-                const Text('Enter the following to the POS machine Z-Read\n'),
-                const ZReadTable(),
-                Text(
-                    'Total: \$${context.read<TakingModel>().getTotal.toStringAsFixed(2)}')
-              ])))
+              child: Container(
+                  margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: Column(children: [
+                    const Text(
+                        'Enter the following to the POS machine Z-Read\n'),
+                    const ZReadTable(),
+                    Container(
+                      padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white),
+                        color: Colors.grey.shade700,
+                      ),
+                      child: Center(
+                          child: Text(
+                              'Total: \$${context.read<TakingModel>().getTotal.toStringAsFixed(2)}',
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold))),
+                    )
+                  ]))))
     ];
 
     return Scaffold(
