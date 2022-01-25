@@ -38,7 +38,7 @@ class _FinalisingTerminalPageState extends State<FinalisingTerminalPage> {
               alignment: Alignment.centerLeft,
               child: Column(children: [
                 const Text('Enter the following to the POS machine Z-Read\n'),
-                makeTable(),
+                const ZReadTable(),
                 Text(
                     'Total: \$${context.read<TakingModel>().getTotal.toStringAsFixed(2)}')
               ])))
@@ -71,11 +71,5 @@ class _FinalisingTerminalPageState extends State<FinalisingTerminalPage> {
           },
           steps: stepList,
         ));
-  }
-
-  Widget makeTable() {
-    return Container(
-        margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-        child: const ZReadTable());
   }
 }
