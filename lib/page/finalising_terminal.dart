@@ -1,4 +1,6 @@
 import 'package:app/provider/taking_provider.dart';
+import 'package:app/widget/cell.dart';
+import 'package:app/widget/z_read_table.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 import 'package:intl/intl.dart';
@@ -71,40 +73,9 @@ class _FinalisingTerminalPageState extends State<FinalisingTerminalPage> {
         ));
   }
 
-  TableRow tableHeader() {
-    return const TableRow(
-        children: <Widget>[Text('Denomination'), Text('Count')]);
-  }
-
-  TableRow tableBody(String col1, String col2) {
-    return TableRow(children: <Widget>[Text(col1), Text(col2)]);
-  }
-
   Widget makeTable() {
-    return Table(border: TableBorder.all(), children: <TableRow>[
-      tableHeader(),
-      tableBody('\$0.05',
-          context.read<TakingModel>().getCoinCount(0).toStringAsFixed(0)),
-      tableBody('\$0.10',
-          context.read<TakingModel>().getCoinCount(1).toStringAsFixed(0)),
-      tableBody('\$0.20',
-          context.read<TakingModel>().getCoinCount(2).toStringAsFixed(0)),
-      tableBody('\$0.50',
-          context.read<TakingModel>().getCoinCount(3).toStringAsFixed(0)),
-      tableBody('\$1.00',
-          context.read<TakingModel>().getCoinCount(4).toStringAsFixed(0)),
-      tableBody('\$2.00',
-          context.read<TakingModel>().getCoinCount(5).toStringAsFixed(0)),
-      tableBody('\$5.00',
-          context.read<TakingModel>().getNoteCount(0).toStringAsFixed(0)),
-      tableBody('\$10.00',
-          context.read<TakingModel>().getNoteCount(1).toStringAsFixed(0)),
-      tableBody('\$20.00',
-          context.read<TakingModel>().getNoteCount(2).toStringAsFixed(0)),
-      tableBody('\$50.00',
-          context.read<TakingModel>().getNoteCount(3).toStringAsFixed(0)),
-      tableBody('\$100.00',
-          context.read<TakingModel>().getNoteCount(4).toStringAsFixed(0)),
-    ]);
+    return Container(
+        margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+        child: const ZReadTable());
   }
 }
