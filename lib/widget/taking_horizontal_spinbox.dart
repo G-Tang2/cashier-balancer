@@ -2,7 +2,7 @@ import 'package:app/main.dart';
 import 'package:app/provider/taking_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 
 class TakingHorizontalSpinBox extends StatelessWidget {
   final int i;

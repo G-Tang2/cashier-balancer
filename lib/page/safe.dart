@@ -4,7 +4,7 @@ import 'package:app/widget/bottom_navigation.dart';
 import 'package:app/widget/next_button.dart';
 import 'package:app/widget/safe_horizontal_spinbox.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 
 class SafePage extends StatefulWidget {
   const SafePage({Key? key}) : super(key: key);

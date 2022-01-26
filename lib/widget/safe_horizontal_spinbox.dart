@@ -1,7 +1,7 @@
 import 'package:app/provider/safe_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 
 class SafeHorizontalSpinBox extends StatelessWidget {
   final int i;

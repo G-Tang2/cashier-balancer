@@ -1,8 +1,7 @@
 import 'package:app/provider/taking_provider.dart';
-import 'package:app/widget/cell.dart';
 import 'package:app/widget/z_read_table.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 
 class FinalisingTerminalPage extends StatefulWidget {

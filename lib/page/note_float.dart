@@ -8,7 +8,7 @@ import 'package:app/widget/float_horizontal_spinbox.dart';
 import 'package:app/widget/message_box.dart';
 import 'package:app/widget/next_button.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 import 'package:collection/collection.dart';
 
 class NoteFloatPage extends StatefulWidget {

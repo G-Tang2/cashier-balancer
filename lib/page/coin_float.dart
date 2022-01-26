@@ -8,8 +8,8 @@ import 'package:app/widget/message_box.dart';
 import 'package:app/widget/next_button.dart';
 import 'package:app/widget/taking_horizontal_spinbox.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
 import 'package:collection/collection.dart';
+import 'package:provider/provider.dart';
 
 class CoinFloatPage extends StatefulWidget {
   const CoinFloatPage({Key? key}) : super(key: key);

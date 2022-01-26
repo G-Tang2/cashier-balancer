@@ -1,7 +1,7 @@
 import 'package:app/provider/float_provider.dart';
 import 'package:app/provider/taking_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 
 class FinalisingTabletPage extends StatefulWidget {
   const FinalisingTabletPage({Key? key}) : super(key: key);

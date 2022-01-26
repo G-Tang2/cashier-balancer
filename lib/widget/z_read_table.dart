@@ -1,7 +1,7 @@
 import 'package:app/provider/taking_provider.dart';
 import 'package:app/widget/cell.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 
 class ZReadTable extends StatelessWidget {
   const ZReadTable({Key? key}) : super(key: key);

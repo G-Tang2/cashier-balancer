@@ -5,7 +5,7 @@ import 'package:app/widget/message_box.dart';
 import 'package:app/widget/next_button.dart';
 import 'package:app/widget/till_horizontal_spinbox.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 
 class TillPage extends StatefulWidget {
   const TillPage({Key? key}) : super(key: key);
