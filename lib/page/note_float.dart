@@ -4,6 +4,7 @@ import 'package:app/provider/safe_provider.dart';
 import 'package:app/provider/taking_provider.dart';
 import 'package:app/provider/till_provider.dart';
 import 'package:app/widget/bottom_navigation.dart';
+import 'package:app/widget/cash_spinbox.dart';
 import 'package:app/widget/float_horizontal_spinbox.dart';
 import 'package:app/widget/message_box.dart';
 import 'package:app/widget/next_button.dart';
@@ -36,11 +37,36 @@ class _NotenFloatPageState extends State<NoteFloatPage> {
                 child: Scrollbar(
                     child: ListView(children: [
               makeInstructionText(),
-              const FloatHorizontalSpinBox(0, '\$5.00', CashType.note),
-              const FloatHorizontalSpinBox(1, '\$10.00', CashType.note),
-              const FloatHorizontalSpinBox(2, '\$20.00', CashType.note),
-              const FloatHorizontalSpinBox(3, '\$50.00', CashType.note),
-              const FloatHorizontalSpinBox(4, '\$100.00', CashType.note),
+              CashSpinBox(
+                0,
+                '\$5.00',
+                context.watch<FloatModel>().getNoteCount,
+                context.read<FloatModel>().setNoteCount,
+              ),
+              CashSpinBox(
+                1,
+                '\$10.00',
+                context.watch<FloatModel>().getNoteCount,
+                context.read<FloatModel>().setNoteCount,
+              ),
+              CashSpinBox(
+                2,
+                '\$20.00',
+                context.watch<FloatModel>().getNoteCount,
+                context.read<FloatModel>().setNoteCount,
+              ),
+              CashSpinBox(
+                3,
+                '\$50.00',
+                context.watch<FloatModel>().getNoteCount,
+                context.read<FloatModel>().setNoteCount,
+              ),
+              CashSpinBox(
+                4,
+                '\$100.00',
+                context.watch<FloatModel>().getNoteCount,
+                context.read<FloatModel>().setNoteCount,
+              ),
             ]))),
             BottomNavigation(
                 text:

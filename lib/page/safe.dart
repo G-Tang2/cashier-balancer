@@ -63,7 +63,7 @@ class _SafePageState extends State<SafePage> {
             ),
             CashSpinBox(
               5,
-              '\$0.50',
+              '\$2.00',
               context.watch<SafeModel>().get,
               context.read<SafeModel>().set,
             )
