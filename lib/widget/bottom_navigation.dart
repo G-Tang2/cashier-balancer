@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class BottomNavigation extends StatelessWidget {
-  final String text;
   final Widget button;
+  final String? text;
   final String? subText;
 
   const BottomNavigation(
-      {required this.text, required this.button, this.subText, Key? key})
+      {required this.button, this.text, this.subText, Key? key})
       : super(key: key);
 
   @override
@@ -16,18 +16,21 @@ class BottomNavigation extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.fromLTRB(0, 15, 0, 15),
         child: Column(children: [
-          subText != null
-              ? Container(
-                  child: Text(subText!,
-                      style: TextStyle(fontSize: 12, color: Colors.grey[400])),
-                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 5),
-                )
-              : Container(),
-          Text(
-            text,
-            style: const TextStyle(fontSize: 32),
-          ),
-          const SizedBox(height: 10),
+          if (subText != null)
+            Container(
+              margin: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+              child: Text(
+                subText!,
+                style: TextStyle(fontSize: 12, color: Colors.grey[400]),
+              ),
+            ),
+          if (text != null)
+            Container(
+                margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                child: Text(
+                  text!,
+                  style: const TextStyle(fontSize: 32),
+                )),
           button
         ]));
   }

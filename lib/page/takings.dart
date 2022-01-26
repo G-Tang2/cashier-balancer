@@ -38,10 +38,8 @@ class _TakingsPageState extends State<TakingsPage> {
                 child: Container(
                     margin: const EdgeInsets.fromLTRB(25, 0, 25, 0),
                     child: const ZReadTable())),
-            BottomNavigation(
-                text:
-                    '\$${context.read<TakingModel>().getTotal.toStringAsFixed(2)}',
-                button: const NextButton(destination: '/finalising'))
+            const BottomNavigation(
+                text: null, button: NextButton(destination: '/finalising'))
           ])));
 
   Future<bool> updateNoteTakings() {
