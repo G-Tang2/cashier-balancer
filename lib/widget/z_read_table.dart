@@ -8,31 +8,44 @@ class ZReadTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Table(border: TableBorder.all(color: Colors.white), children: [
-      tableRow('Denomination', 'Count',
-          const TextStyle(fontWeight: FontWeight.bold), Colors.grey.shade700),
-      tableRow('\$0.05',
-          context.read<TakingModel>().getCoinCount(0).toStringAsFixed(0)),
-      tableRow('\$0.10',
-          context.read<TakingModel>().getCoinCount(1).toStringAsFixed(0)),
-      tableRow('\$0.20',
-          context.read<TakingModel>().getCoinCount(2).toStringAsFixed(0)),
-      tableRow('\$0.50',
-          context.read<TakingModel>().getCoinCount(3).toStringAsFixed(0)),
-      tableRow('\$1.00',
-          context.read<TakingModel>().getCoinCount(4).toStringAsFixed(0)),
-      tableRow('\$2.00',
-          context.read<TakingModel>().getCoinCount(5).toStringAsFixed(0)),
-      tableRow('\$5.00',
-          context.read<TakingModel>().getNoteCount(0).toStringAsFixed(0)),
-      tableRow('\$10.00',
-          context.read<TakingModel>().getNoteCount(1).toStringAsFixed(0)),
-      tableRow('\$20.00',
-          context.read<TakingModel>().getNoteCount(2).toStringAsFixed(0)),
-      tableRow('\$50.00',
-          context.read<TakingModel>().getNoteCount(3).toStringAsFixed(0)),
-      tableRow('\$100.00',
-          context.read<TakingModel>().getNoteCount(4).toStringAsFixed(0)),
+    return Column(children: [
+      Table(border: TableBorder.all(color: Colors.white), children: [
+        tableRow('Denomination', 'Count',
+            const TextStyle(fontWeight: FontWeight.bold), Colors.grey.shade700),
+        tableRow('\$0.05',
+            context.read<TakingModel>().getCoinCount(0).toStringAsFixed(0)),
+        tableRow('\$0.10',
+            context.read<TakingModel>().getCoinCount(1).toStringAsFixed(0)),
+        tableRow('\$0.20',
+            context.read<TakingModel>().getCoinCount(2).toStringAsFixed(0)),
+        tableRow('\$0.50',
+            context.read<TakingModel>().getCoinCount(3).toStringAsFixed(0)),
+        tableRow('\$1.00',
+            context.read<TakingModel>().getCoinCount(4).toStringAsFixed(0)),
+        tableRow('\$2.00',
+            context.read<TakingModel>().getCoinCount(5).toStringAsFixed(0)),
+        tableRow('\$5.00',
+            context.read<TakingModel>().getNoteCount(0).toStringAsFixed(0)),
+        tableRow('\$10.00',
+            context.read<TakingModel>().getNoteCount(1).toStringAsFixed(0)),
+        tableRow('\$20.00',
+            context.read<TakingModel>().getNoteCount(2).toStringAsFixed(0)),
+        tableRow('\$50.00',
+            context.read<TakingModel>().getNoteCount(3).toStringAsFixed(0)),
+        tableRow('\$100.00',
+            context.read<TakingModel>().getNoteCount(4).toStringAsFixed(0)),
+      ]),
+      Container(
+        padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.white),
+          color: Colors.grey.shade700,
+        ),
+        child: Center(
+            child: Text(
+                'Total: \$${context.read<TakingModel>().getTotal.toStringAsFixed(2)}',
+                style: const TextStyle(fontWeight: FontWeight.bold))),
+      )
     ]);
   }
 
