@@ -4,6 +4,7 @@ import 'package:app/provider/safe_provider.dart';
 import 'package:app/provider/taking_provider.dart';
 import 'package:app/provider/till_provider.dart';
 import 'package:app/widget/bottom_navigation.dart';
+import 'package:app/widget/cash_spinbox.dart';
 import 'package:app/widget/message_box.dart';
 import 'package:app/widget/next_button.dart';
 import 'package:app/widget/taking_horizontal_spinbox.dart';
@@ -44,12 +45,42 @@ class _CoinFloatPageState extends State<CoinFloatPage> {
                       style: TextStyle(color: Colors.black)))
             ],
           )),
-          const TakingHorizontalSpinBox(0, '\$0.05', CashType.coin),
-          const TakingHorizontalSpinBox(1, '\$0.10', CashType.coin),
-          const TakingHorizontalSpinBox(2, '\$0.20', CashType.coin),
-          const TakingHorizontalSpinBox(3, '\$0.50', CashType.coin),
-          const TakingHorizontalSpinBox(4, '\$1.00', CashType.coin),
-          const TakingHorizontalSpinBox(5, '\$2.00', CashType.coin),
+          CashSpinBox(
+            0,
+            '\$0.05',
+            context.watch<TakingModel>().getCoinCount,
+            context.read<TakingModel>().setCoinCount,
+          ),
+          CashSpinBox(
+            1,
+            '\$0.10',
+            context.watch<TakingModel>().getCoinCount,
+            context.read<TakingModel>().setCoinCount,
+          ),
+          CashSpinBox(
+            2,
+            '\$0.20',
+            context.watch<TakingModel>().getCoinCount,
+            context.read<TakingModel>().setCoinCount,
+          ),
+          CashSpinBox(
+            3,
+            '\$0.50',
+            context.watch<TakingModel>().getCoinCount,
+            context.read<TakingModel>().setCoinCount,
+          ),
+          CashSpinBox(
+            4,
+            '\$1.00',
+            context.watch<TakingModel>().getCoinCount,
+            context.read<TakingModel>().setCoinCount,
+          ),
+          CashSpinBox(
+            5,
+            '\$2.00',
+            context.watch<TakingModel>().getCoinCount,
+            context.read<TakingModel>().setCoinCount,
+          ),
         ]))),
         BottomNavigation(
             text:
