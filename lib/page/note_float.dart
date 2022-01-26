@@ -1,11 +1,9 @@
-import 'package:app/main.dart';
 import 'package:app/provider/float_provider.dart';
 import 'package:app/provider/safe_provider.dart';
 import 'package:app/provider/taking_provider.dart';
 import 'package:app/provider/till_provider.dart';
 import 'package:app/widget/bottom_navigation.dart';
 import 'package:app/widget/cash_spinbox.dart';
-import 'package:app/widget/float_horizontal_spinbox.dart';
 import 'package:app/widget/message_box.dart';
 import 'package:app/widget/next_button.dart';
 import 'package:flutter/material.dart';

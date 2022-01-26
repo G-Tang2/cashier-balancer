@@ -3,7 +3,6 @@ import 'package:app/widget/cash_spinbox.dart';
 import 'package:app/widget/message_box.dart';
 import 'package:app/widget/bottom_navigation.dart';
 import 'package:app/widget/next_button.dart';
-import 'package:app/widget/safe_horizontal_spinbox.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
