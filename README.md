@@ -1,5 +1,5 @@
 # Cashier Balancer
-The application for web browsers can be accessed through: https://g-tang2.github.io/
+The application can be accessed through: https://g-tang2.github.io/
 
 This is an application to assist Sushi Sushi employees with balancing their cash registers at the end of the day.
 
